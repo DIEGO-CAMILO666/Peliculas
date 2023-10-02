@@ -16,11 +16,27 @@ const MediaSchema = Schema({
         minlength:1
     },
 
-    genero: {
+   
+    url: {
+        type: String
+        
+    },
+    imagen: {
+        type: String
+        
+    },
+     genero: {
         type: Schema.Types.ObjectId,
         ref: 'Genero',
         required: true
-    }
+    },
+    tipo: {
+        type: Schema.Types.ObjectId,
+        ref: 'Tipo',
+        required: true
+    },
+
+    
 })
 
-module.exports = model('Tipo',tipoSchema)
+module.exports = model('Media',MediaSchema)
