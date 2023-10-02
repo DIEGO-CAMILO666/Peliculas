@@ -4,7 +4,7 @@ const GeneroSchema = Schema({
 
     nombre:{
         type:String,
-        required: [True,' Dato requerido'],
+        required: [true,' Dato requerido'],
         minlength:1
     },
     estado:{

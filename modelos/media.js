@@ -1,6 +1,7 @@
 const {  Schema, model} = require('mongoose')
 
 const MediaSchema = Schema({
+    //Atributos
     serial:{
         type: String,
         required: [true,'serial requerido'],
@@ -10,21 +11,29 @@ const MediaSchema = Schema({
         type: String,
         required: [true,'Titulo requerido']
     },
-    nombre:{
-        type:String,
-        required: [true,' Nombre de tipo requerido'],
-        minlength:1
+    sinopsis:{
+        type:String, 
     },
-
-   
     url: {
         type: String
         
     },
     imagen: {
         type: String
-        
     },
+    fechaCreacion:{
+        type: Date, 
+        default: new Date()
+    },
+    fechaActualizacion:{
+        type: Date, 
+        default: new Date()
+    },
+    añoEstreno:{
+        type: Date, 
+        default: new Date()
+    },
+    //Atributos de schema 
      genero: {
         type: Schema.Types.ObjectId,
         ref: 'Genero',
@@ -33,6 +42,16 @@ const MediaSchema = Schema({
     tipo: {
         type: Schema.Types.ObjectId,
         ref: 'Tipo',
+        required: true
+    },
+    director: {
+        type: Schema.Types.ObjectId,
+        ref: 'Director',
+        required: true
+    },
+    productor: {
+        type: Schema.Types.ObjectId,
+        ref: 'Productor',
         required: true
     },
 
