@@ -23,7 +23,7 @@ const { request, response } = require("express")
     
         const genero = new Genero(datos)
     
-        genero.save()
+        await genero.save()
         return res.status(201).json(genero)
     } catch (error) {
       console.log(error)  
