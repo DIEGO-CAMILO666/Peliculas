@@ -7,6 +7,8 @@ mongoConn()
 
 const app = express()
 
+app.use(express.json())
+
 const test = require('./routes/test.js')
 const generos = require('./routes/genero')
 
