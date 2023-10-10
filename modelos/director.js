@@ -4,7 +4,7 @@ const DirectorSchema = Schema({
 
     nombre:{
         type:String,
-        required: [True,' Dierector requerido'],
+        required: [true,' Dierector requerido'],
         minlength:1
     },
     estado:{
