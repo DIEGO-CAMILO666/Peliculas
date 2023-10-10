@@ -34,7 +34,20 @@ const { request, response } = require("express")
 /**
  * consultar todos los generos
  */
-
+const getGeneros =  async(req = request, res = response) => {
+ 
+     
+     try {
+         const {estado} = req.query
+         const generos = await Genero.find({ estado })
+         
+         return res.status(201).json(generos)
+     } catch (error) {
+       console.log(error)  
+       return res.status(500).json({msj:error})
+     }
+     
+  }
 /**
  * consultar un genero por su ID
  */
@@ -47,5 +60,6 @@ const { request, response } = require("express")
  */
 
 module.exports = {
-    crearGenero
+    crearGenero,getGeneros
 }
+

@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const{crearGenero} = require('../controllers/genero')
+const{getGeneros} = require('../controllers/genero')
 
 const router = Router()
 
@@ -10,7 +11,7 @@ router.post('/',crearGenero)
 /**
  * consultar todos los generos
  */
-
+router.get('/',getGeneros)
 /**
  * consultar un genero por su ID
  */
@@ -23,7 +24,8 @@ router.post('/',crearGenero)
  */
 
 module.exports = {
-    crearGenero
+    crearGenero,getGeneros
 }
+
 
 module.exports = router
